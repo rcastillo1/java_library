@@ -1,0 +1,17 @@
+package com.mycompany.project;
+
+public class Magazine extends Item{
+    private String editor;
+    private String category;
+
+    public Magazine(int itemId, String title, int year) {
+        super(itemId, title, year);
+        this.editor = editor;
+        this.category = category;
+    }
+
+    @Override
+    public String displayDetails() {
+        return "Magazine: " + getTitle() + " edited by" + editor + "(" + category + ")";
+    }
+}
