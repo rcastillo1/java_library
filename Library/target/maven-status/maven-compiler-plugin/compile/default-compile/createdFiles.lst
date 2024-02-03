@@ -1,0 +1,13 @@
+DVD.class
+LibraryDatabase.class
+Item.class
+Library.class
+AuthenticationServlet.class
+Book.class
+UserDatabase.class
+Magazine.class
+User.class
+LibraryServlet.class
+BorrowRecord.class
+com\mycompany\library\resources\JakartaEE10Resource.class
+com\mycompany\library\JakartaRestConfiguration.class

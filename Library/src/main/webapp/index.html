@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input, button {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 8px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .library-section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Login Section -->
+<section id="loginSection">
+    <h2>Login</h2>
+    <form id="loginForm" action="/your-context-path/auth" method="post">
+        <input type="hidden" name="action" value="login">
+        Email: <input type="text" name="username" required><br>
+        Password: <input type="password" name="password" required><br>
+        <button type="submit">Login</button>
+        <p class="error" id="loginError"></p>
+    </form>
+</section>
+
+<!-- After Login Section -->
+<section id="afterLoginSection" class="hidden">
+    <h2>Welcome, User!</h2>
+
+    <!-- Add Item Section -->
+    <div id="addItemSection">
+        <h3>Add Item</h3>
+        <form id="addItemForm" action="/your-context-path/library" method="post">
+            <input type="hidden" name="action" value="add">
+            Title: <input type="text" name="title" required><br>
+            <!-- Other item details... -->
+            <button type="submit">Add Item</button>
+            <p class="error" id="addItemError"></p>
+        </form>
+    </div>
+
+    <!-- Borrow Item Section -->
+    <div id="borrowItemSection" class="hidden">
+        <h3>Borrow Item</h3>
+        <form id="borrowItemForm" action="/your-context-path/library" method="post">
+            <input type="hidden" name="action" value="borrow">
+            User ID: <input type="text" name="userId" required><br>
+            Item ID: <input type="text" name="itemId" required><br>
+            <button type="submit">Borrow Item</button>
+            <p class="error" id="borrowItemError"></p>
+        </form>
+    </div>
+
+    <!-- Logout Button -->
+    <button id="logoutButton">Logout</button>
+</section>
+
+<!-- Success Messages -->
+<p class="success" id="successMessage"></p>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        // Simulate a successful login (replace this with your actual login logic)
+        document.getElementById('loginError').innerText = '';
+
+        // Hide the login section
+        document.getElementById('loginSection').classList.add('hidden');
+        
+        // Show the after login section
+        document.getElementById('afterLoginSection').classList.remove('hidden');
+
+        event.preventDefault(); // Prevent the form from submitting in the traditional way
+    });
+
+    document.getElementById('addItemForm').addEventListener('submit', function (event) {
+        // Simulate a successful item addition (replace this with your actual logic)
+        document.getElementById('addItemError').innerText = '';
+        
+        // Show the borrow item section
+        document.getElementById('borrowItemSection').classList.remove('hidden');
+
+        event.preventDefault(); // Prevent the form from submitting in the traditional way
+    });
+
+    document.getElementById('borrowItemForm').addEventListener('submit', function (event) {
+        // Perform borrow item form submission handling using AJAX or other methods.
+        // Update the error message on the page based on the response.
+        document.getElementById('borrowItemError').innerText = 'Error borrowing item';
+        event.preventDefault(); // Prevent the form from submitting in the traditional way
+    });
+
+    // Logout Button Click Event
+    document.getElementById('logoutButton').addEventListener('click', function () {
+        // Simulate a logout (replace this with your actual logout logic)
+
+        // Show the login section
+        document.getElementById('loginSection').classList.remove('hidden');
+        
+        // Hide the after login section
+        document.getElementById('afterLoginSection').classList.add('hidden');
+
+        // Hide the borrow item section
+        document.getElementById('borrowItemSection').classList.add('hidden');
+    });
+</script>
+
+</body>
+</html>
