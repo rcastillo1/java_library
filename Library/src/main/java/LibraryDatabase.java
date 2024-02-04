@@ -13,9 +13,6 @@ public class LibraryDatabase {
 
         return items;
     }
-
-    // Add a new item (not applicable in this case, as we are not connecting to a real database)
     public void addItem(Item item) {
-        // Implementation not required for hardcoded data
     }
 }
