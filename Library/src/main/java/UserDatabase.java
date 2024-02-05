@@ -4,7 +4,7 @@ import java.util.List;
 
 public class UserDatabase {
 
-    private static List<UserDatabase> users = new ArrayList<>();
+    private static List<User> users = new ArrayList<>();
     private static List<Item> items = new ArrayList<>();
     private static List<BorrowRecord> BorrowRecords = new ArrayList<>();
 
