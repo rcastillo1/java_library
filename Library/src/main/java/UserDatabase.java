@@ -9,18 +9,18 @@ public class UserDatabase {
     private static List<BorrowRecord> BorrowRecords = new ArrayList<>();
 
     // Adds user to array
-    public static void addUser(UserDatabase user) {
+    public static void addUser(User user) {
         users.add(user);
     }
 
     // Retrieves all users from array
-    public static List<UserDatabase> getUsers() {
+    public static List<Usere> getUsers() {
         return users;
     }
 
     // Checks user credentials
     public static boolean checkUserCredentials(String email, String password) {
-        for (UserDatabase user : users) {
+        for (User user : users) {
             if (email.equals(user.getEmail()) && password.equals(user.getPassword())) {
                 return true;
             }
