@@ -1,21 +1,9 @@
-// UserDAO.java
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
-public class UserDatabase {
 
-    private static final Map<String, User> userDatabase = new HashMap<>();
+public class UserDatabase{
 
-    static {
-        User user = new User(1, "John", "john@email.com", "john123");
-        userDatabase.put("john@email.com", user);
-    }
 
-    public User authenticateUser(String email, String password) {
-        User user = userDatabase.get(email);
-        if (user != null && user.getPassword().equals(password)) {
-            return user;
-        }
-        return null;
-    }
+    
 }

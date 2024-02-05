@@ -4,29 +4,29 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 
-@WebServlet("/auth")
+@WebServlet("/AuthenticationServlet")
 public class AuthenticationServlet extends HttpServlet {
-
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    
-        String username = request.getParameter("username");
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
-
-
-        UserDatabase UserDatabase = new UserDatabase();
-        User user = UserDatabase.authenticateUser(username, password);
-
-        if (user != null) {
-            HttpSession session = request.getSession();
-            session.setAttribute("user", user);
-            response.sendRedirect(request.getContextPath() + "/library");
-        } else {
-
-            response.sendRedirect(request.getContextPath() + "/login.jsp?error=1");
+        
+        List<User> users = User.getUsers();
+        //check whether email and user
+        for(User user: users){
+            if(email.equals(user.getEmail())&&password.equals(user.getPassword())){
+                response.sendRedirect("Home.html");
+            }
         }
+        out.println("Wrong username or password");
+
+        
     }
 }
