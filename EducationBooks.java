@@ -1,10 +1,9 @@
-
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class EducationBooks {
 
-    public static void main(String[] args) {
-        // Create array
+    public static ArrayList<String> educationBooks() {
         ArrayList<String> educationBooks = new ArrayList<>();
 
         // Add EDU books to array
@@ -34,13 +33,7 @@ public class EducationBooks {
         educationBooks.add("Lies My Teacher Told Me: Everything Your American History Textbook Got Wrong - James W. Loewen");
         educationBooks.add("Creative Schools: The Grassroots Revolution That's Transforming Education - Sir Ken Robinson PhD and Lou Aronica");
 
-        System.out.println("Education Books:");
-        for (String book : educationBooks) {
-            System.out.println(book);
-        }
-    }
-
-    public static ArrayList<String> getEducationBooks() {
-        return null;
+        Collections.sort(educationBooks);
+        return educationBooks;
     }
 }
