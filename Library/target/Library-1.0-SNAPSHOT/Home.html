@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-<html>
-    <head>
-        <title>Home</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>Welcome</div>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+<h1>Welcome to the Library</h1>
+<div id="items-container"></div>
+<div id="confirmation-message"></div>
+<script>
+    fetchItems();
+
+    function fetchItems() {
+        fetch('LibraryServlet')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('items-container').innerHTML = data;
+    })
+                .catch(error => console.error('Error fetching items:', error));
+    }
+</script>
+</body>
 </html>

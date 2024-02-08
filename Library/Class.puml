@@ -1,0 +1,56 @@
+@startuml ClassDiagram
+
+abstract class Item {
+    -id : int
+    -title : string
+    -genre : string
+}
+
+class Book {
+    -author : string
+    -publisher : string
+}
+
+class DVD {
+    -director : string
+    -length : int
+}
+class Magazine {
+    -editor : string
+    -categories : string
+}
+
+class User {
+    -userId : int
+    -name : string
+    -email : string
+    -password : string
+}
+
+class BorrowRecord {
+    -recordId : int
+    -userId : int
+    -itemId : int
+}
+
+class Library {
+    -items : Item[]
+    -users : User[]
+}
+
+class LibraryDatabase {
+}
+
+Item <|-- Book
+Item <|-- DVD
+Item <|-- Magazine
+
+Library "1" -- "*" Item : contains
+Library "1" -- "*" User : registers
+
+BorrowRecord "*" -- "1" User
+BorrowRecord "*" -- "1" Item
+LibraryDatabase  --  Book : contains
+LibraryDatabase  --  DVD : contains
+LibraryDatabase  --  Magazine : contains
+@enduml

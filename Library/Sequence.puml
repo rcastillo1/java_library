@@ -1,0 +1,28 @@
+@startuml
+actor User
+participant "UI" as UI
+participant "LibraryServlet" as Library
+participant "AuthenticationServlet" as Auth
+participant "BorrowServlet" as BS
+database "Database" as DB
+
+User -> UI: Access Library System
+UI -> Auth: Authenticate User
+Auth -> DB: Query User
+DB -> Auth: Return Authentication Result
+Auth -> UI: Return Authentication Result
+
+User -> UI: Request All Items
+UI -> Library: Request All Items
+Library -> DB: Query All Items
+DB -> Library: Return Item List
+Library -> UI: Display Item List
+
+
+User -> UI: Borrow Item
+UI -> BS: Request Borrow
+BS -> DB: Check Item Availability
+DB -> BS: Confirm Borrow Completed
+BS -> UI: Display Borrow Confirmation
+
+@enduml

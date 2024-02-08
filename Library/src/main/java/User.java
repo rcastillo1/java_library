@@ -1,7 +1,4 @@
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class User {
     private int userId;
     private String name;
@@ -30,11 +27,5 @@ public class User {
         this.email = email;
         this.password = password;
     }
-    
-    public static List<User> getUsers(){
-        List<User> users = new ArrayList<>();
-        users.add(new User(1, "John", "john@email.com", "john123"));
-        users.add(new User(2, "Mary", "mary@email.com", "maryabc"));
-        return users;
-    }
+
 }

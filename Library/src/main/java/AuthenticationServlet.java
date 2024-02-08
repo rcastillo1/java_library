@@ -18,15 +18,19 @@ public class AuthenticationServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         
-        List<User> users = User.getUsers();
-        //check whether email and user
+        List<User> users = LibraryDatabase.getUsers();
+        //check whether email and password match
+        boolean userAuthentication = false;
         for(User user: users){
             if(email.equals(user.getEmail())&&password.equals(user.getPassword())){
-                response.sendRedirect("Home.html");
+                userAuthentication = true;
+                break;
             }
         }
-        out.println("Wrong username or password");
-
-        
+        if (userAuthentication){
+            response.sendRedirect("Home.html");
+        }else{
+            out.println("Wrong username or password");  
+        } 
     }
 }

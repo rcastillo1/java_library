@@ -7,11 +7,9 @@ public abstract class Item {
     public int getItemId() {
         return itemId;
     }
-
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
+    public String getTitle(int itemId) {
+        return title;
     }
-
     public String getTitle() {
         return title;
     }
