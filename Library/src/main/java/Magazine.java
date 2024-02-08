@@ -1,5 +1,4 @@
 
-
 public class Magazine extends Item{
     private String editor;
     private String category;
@@ -12,7 +11,6 @@ public class Magazine extends Item{
         return category;
     }
 
-
     public Magazine(int itemId, String title, int year, String editor, String category) {
         this.itemId = itemId;
         this.title = title;
@@ -20,5 +18,15 @@ public class Magazine extends Item{
         this.editor = editor;
         this.category = category;
     }
-    
+    // get the magazines from magazines.java
+    public static Item[] getItems(Magazine[] magazines) {
+        Item[] items = new Item[magazines.length];
+        for (int i = 0; i < magazines.length; i++) {
+            items[i] = magazines[i];
+        }
+        return items;
+    }
+
+    // ...
 }
+
