@@ -1,0 +1,42 @@
+package com.mycompany.project;
+
+class User {
+    private int userId;
+    private String name;
+    private String email;
+
+    public User(int userId, String name, String email) {
+        this.userId = userId;
+        this.name = name;
+        this.email = email;
+    }
+}
+
+class BorrowRecord {
+    private int recordId;
+    private User user;
+    private Item item;
+   
+
+    public BorrowRecord(int id, User user, Item item) {
+        this.recordId = recordId;
+        this.user = user;
+        this.item = item;
+       
+    }
+}
+
+class LibraryServlet {
+}
+
+// AuthenticationServlet for managing user authentication
+class AuthenticationServlet {
+}
+
+
+public class Project {
+
+    public static void main(String[] args) {
+        
+    }
+}

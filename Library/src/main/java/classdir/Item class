@@ -1,0 +1,19 @@
+package com.mycompany.project;
+
+abstract class Item {
+    private int itemId;
+    private String title;
+    private int year;
+    
+    public String getTitle(){
+        return title;
+    }
+    
+    
+     public Item(int itemId, String title, int year) {
+        this.itemId = itemId;
+        this.title = title;
+        this.year = year;
+     }
+     public abstract String displayDetails();
+}

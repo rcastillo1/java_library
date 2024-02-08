@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class UserDatabase {
     }
 
     // Retrieves all users from array
-    public static List<Usere> getUsers() {
+    public static List<User> getUsers() {
         return users;
     }
 

@@ -1,0 +1,16 @@
+package com.mycompany.project;
+
+public class DVD extends Item{
+    private String director;
+    private String genre;
+
+    public DVD(int itemId, String title, int year) {
+        super(itemId, title, year);
+        this.director = director;
+        this.genre = genre;
+    }
+    @Override
+    public String displayDetails() {
+        return "DVD: " + getTitle() + " directed by " + director + " (" + genre + ")";
+    }
+}
