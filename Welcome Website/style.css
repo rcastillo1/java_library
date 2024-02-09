@@ -1,0 +1,77 @@
+:root {
+  --white: white;
+  --black: black;
+}
+
+.w-layout-blockcontainer {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+@media screen and (max-width: 991px) {
+  .w-layout-blockcontainer {
+    max-width: 728px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .w-layout-blockcontainer {
+    max-width: none;
+  }
+}
+
+.section {
+  height: 400px;
+  background-image: linear-gradient(rgba(16, 9, 39, .66), rgba(16, 9, 39, .66)), url('libraryanimals.jpg');
+  background-position: 0 0, 50%;
+  background-size: auto, cover;
+  border-bottom: 10px solid #fff;
+}
+
+.body {
+  background-color: #661e1e;
+}
+
+.text-block {
+  color: var(--white);
+  text-align: center;
+  padding-top: 100;
+  margin-bottom: 400px;
+  font-family: Changa One, Impact, sans-serif;
+  font-size: 80px;
+}
+
+.container {
+  color: #fff;
+  font-family: Changa One, Impact, sans-serif;
+  font-size: 20px;
+}
+
+.text-block-2 {
+  color: #e7ff7a;
+  text-align: left;
+  font-size: 30px;
+}
+
+.section-2 {
+  margin-top: 41px;
+}
+
+.paragraph {
+  margin-top: 10px;
+}
+
+.form {
+  padding-top: 31px;
+}
+
+.field-label {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.submit-button {
+  border-radius: 7px;
+}
