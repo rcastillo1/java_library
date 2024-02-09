@@ -57,6 +57,11 @@ public class LibraryDatabase {
     public static void addBorrowRecord(BorrowRecord BorrowRecord) {
         BorrowRecords.add(BorrowRecord);
     }
+    
+    public static List<BorrowRecord> getBorrowRecords()
+    {
+    	return BorrowRecords;
+    }
 
     // Checks item availability
     public static boolean checkItemAvailability(int itemId) {
