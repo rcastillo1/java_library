@@ -54,6 +54,13 @@ public class LibraryServlet extends HttpServlet {
         out.println("Enter Item ID: <input type=\"text\" name=\"itemId\">");
         out.println("<input type=\"submit\" name=\"confirmBorrowing\" value=\"Confirm\">");
         out.println("</form>");
+        
+        //User Enters ID for returning an item
+        out.println("<h2>Borrowed Items</h2>");
+        out.println("<form action=\"ReturnServlet\" method=\"get\">");
+        //out.println("Enter Item ID: <input type=\"text\" name=\"itemId\">");
+        out.println("<input type=\"submit\" value=\"Borrowed Items\">");
+        out.println("</form>");
 
         // Display confirmation message if available
         String confirmationMessage = (String) request.getSession().getAttribute("confirmationMessage");
