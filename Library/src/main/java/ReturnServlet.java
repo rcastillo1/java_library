@@ -12,11 +12,6 @@ import java.util.List;
 public class ReturnServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-        List<DVD> dvds = LibraryDatabase.getDVDs();
-        List<Book> books = LibraryDatabase.getBooks();
-        List<Magazine> magazines = LibraryDatabase.getMagazines();
-        
-
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
