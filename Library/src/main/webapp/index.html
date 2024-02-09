@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Library System</title>
+        <title> Library System</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel= "stylesheet" href= "style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap" rel="stylesheet">
     </head>
-    <body>
-        <center><form action="AuthenticationServlet" method="post">
-            <table>
-                <tr>
-                    <th>Email:</th><th><input type="text" name="email"/></th>
-                </tr> 
-                <tr>
-                    <th>Password:</th><th><input type="password" name="password"/></th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th><input type="submit" value="login"/></th>
-                </tr>
-                </table>
-        </form></center>
-    </body>
+
+    <body class="body"> <form action="AuthenticationServlet" method="post">
+        <section class="section-3">
+            <h1 class="heading-2">Library Database<br></h1> 
+        </section> 
+        <section class="login"> 
+            <div class="w-layout-blockcontainer container-5 w-container">
+                 <div class="form-block w-form"> 
+                    <h1 class="heading">Login</h1> 
+                    <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="65c19656150ec62a66413299" data-wf-element-id="37c3b93e-b042-8c98-f95a-37080a75db37"> 
+                        <div class="w-layout-blockcontainer container-4 w-container">
+                             <div class="w-layout-blockcontainer container-2 w-container"> <label for="name" class="field-label-2">Email:</label>
+                                <input class="text-field-2 w-input" maxlength="256" name="email" data-name="Name" placeholder="" type="text" id="name"></div>
+                              <div class="w-layout-blockcontainer container-2 w-container"><label for="name-2" class="field-label-3">Password:</label>
+                                <input class="text-field-2 w-input" maxlength="256" name="password" data-name="Name 2" placeholder="" type="password" id="name-2"></div>
+                                <input class="submit-button w-button" type="submit" data-wait="Please wait..."  value="Login">
+                             </div> 
+                    </form> 
+                 </div> 
+                        <div class="w-layout-blockcontainer w-container">
+                            <img src="libraryanimals.jpg" loading="lazy" width="588" sizes="(max-width: 767px) 100vw, 588px" alt="" srcset="libraryanimals.jpg 500w, libraryanimals.jpg 800w, libraryanimals.jpg 1080w, libraryanimals.jpg 1587w" class="image">
+                        </div> 
+                    </div> 
+                </section>
+                 <section class="section-3"></section> 
+                  </body>
+
+
 </html>
